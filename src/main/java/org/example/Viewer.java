@@ -1,17 +1,21 @@
 package org.example;
 
+import java.util.List;
+
 public class Viewer {
     private String name;
     private byte age;
-    private int countMoviesWatched;
+    private int countFilmsWatched;
+    private List<Cinema> listFilmsWatched;
 
     public Viewer() {
     }
 
-    public Viewer(String name, byte age, int countMoviesWatched) {
+    public Viewer(String name, byte age, List<Cinema> listFilmsWatched) {
         this.name = name;
         this.age = age;
-        this.countMoviesWatched = countMoviesWatched;
+        this.countFilmsWatched = listFilmsWatched.toArray().length;
+        this.listFilmsWatched = listFilmsWatched;
     }
 
     public String getName() {
@@ -30,11 +34,15 @@ public class Viewer {
         this.age = age;
     }
 
-    public int getCountMoviesWatched() {
-        return countMoviesWatched;
+    public int getCountFilmsWatched() {
+        return countFilmsWatched;
     }
 
-    public void setCountMoviesWatched(int countMoviesWatched) {
-        this.countMoviesWatched = countMoviesWatched;
+    public List<Cinema> getListFilmsWatched() {
+        return listFilmsWatched;
+    }
+
+    public void setListFilmsWatched(List<Cinema> listFilmsWatched) {
+        this.listFilmsWatched = listFilmsWatched;
     }
 }
